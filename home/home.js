@@ -26,7 +26,7 @@ angular.module( 'sample.home', ['auth0'])
         region: 'eu-central-1' // The region where the API is deployed
     });
 
-    apigClient.findingsGet({},{})
+    apigClient.findingsGet({'ticketId': 'undefined', 'deviceId': 'undefined'},{})
     .then(function(reponse){
       console.log(response);
         $scope.pets = response.data;
