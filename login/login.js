@@ -39,7 +39,6 @@ angular.module( 'sample.login', [
       var options = getOptionsForRole(profile.isAdmin, token);
 
       // TODO: Step 3: Enable this section once you setup AWS delegation.
-      /*
       auth.getToken(options)
         .then(
           function(delegation)  {
@@ -49,9 +48,9 @@ angular.module( 'sample.login', [
         function(err) {
            console.log('failed to acquire delegation token', err);
       });
-      */
+      
       // TODO: Step 3: Remove this redirect after you add the get token API.
-      $location.path("/");
+      // $location.path("/");
 
     }, function(error) {
       console.log("There was an error logging in", error);
