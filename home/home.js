@@ -22,7 +22,19 @@ angular.module( 'sample.home', ['auth0'])
   }
 
   function getPets() {
-    window.alert('getPets not implemented');
+    var apigClient = apigClientFactory.newClient({
+        region: 'eu-central-1' // The region where the API is deployed
+    });
+
+    apigClient.findingsGet({},{})
+    .then(function(reponse){
+      console.log(response);
+        $scope.pets = response.data;
+        $scope.$apply();
+      }).catch(function (response) {
+        alert('findings get failed');
+        showError(response);
+    });
   }
 
   // --- Add for updating --- 
